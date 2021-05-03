@@ -15,15 +15,13 @@
 <body>
     
     <div id="app">
-        <div v-if="dataOk" >
-            <h1>e-mail</h1>
-            <ul>
-                <li>Indirizzo e-mail: {{ email }}</li>
+            <h1>10 e-mail</h1>
+            <div v-if="dataOk">
+            <ul  v-for="mail in email">
+                <li> {{ mail }} </li>
             </ul>
-        </div>
-        <div v-else >
-            Caricamento
-        </div>
+            </div>
+            <div v-else> Caricamento... </div>
     </div>
     
 

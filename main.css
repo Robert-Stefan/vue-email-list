@@ -21,7 +21,6 @@ h1 {
 ul {
     display: flex;
     justify-content: center;
-    list-style: none;
     padding: 20px;
 }
 
@@ -29,5 +28,6 @@ li {
     cursor: pointer;
     padding-left: 5px;
     font-size: 20px;
+    list-style: none;
 }
 

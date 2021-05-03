@@ -9,26 +9,31 @@ Bonus
 const app = new Vue ({
     el: "#app",
     data: {
-        email: 0,
+        email: [],
     },
-    computer: {
+    computed: {
         dataOk() {
             return this.email !== 0 ? true : false;
         },
+
     },
     created() {
 
         // AJAX REQUEST EMAILS  
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then( element => {
-            // success
-            console.log(element.data.response);
-            //HTML with this. because I have arrow function
-            this.email = element.data.response;
-        })
-        .catch(error => {
+        for (var i = 0; i < 10; i++) {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then( element => {
+                // success
+                console.log(element.data.response);
+                //HTML with this. because I have arrow function
+                this.email.push(element.data.response);
+            
+
+            })
+            .catch(error => {
             //error
             console.log('Attento: ', error);
-        });
+            });
+        }
     }
 });
