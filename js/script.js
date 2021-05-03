@@ -12,6 +12,8 @@ const app = new Vue ({
         email: [],
     },
     computed: {
+
+        //Caricamento
         dataOk() {
             return this.email.length === 10 ? true : false;
         },
