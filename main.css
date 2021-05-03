@@ -31,3 +31,9 @@ li {
     list-style: none;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 30px;
+}

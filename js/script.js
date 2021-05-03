@@ -13,13 +13,12 @@ const app = new Vue ({
     },
     computed: {
         dataOk() {
-            return this.email !== 0 ? true : false;
+            return this.email.length === 10 ? true : false;
         },
-
     },
     created() {
 
-        // AJAX REQUEST EMAILS  
+        // AJAX REQUEST EMAILS WITH FOR
         for (var i = 0; i < 10; i++) {
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then( element => {
@@ -27,8 +26,6 @@ const app = new Vue ({
                 console.log(element.data.response);
                 //HTML with this. because I have arrow function
                 this.email.push(element.data.response);
-            
-
             })
             .catch(error => {
             //error
