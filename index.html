@@ -7,16 +7,25 @@
     <title>API E-mail</title>
     <!--CSS-->
     <link rel="stylesheet" href="main.css">
-    <!--VUEJS-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!--AXIOS-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--VUEJS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
     
     <div id="app">
-
+        <div v-if="dataOk" >
+            <h1>e-mail</h1>
+            <ul>
+                <li>Indirizzo e-mail: {{ email }}</li>
+            </ul>
+        </div>
+        <div v-else >
+            Caricamento
+        </div>
     </div>
+    
 
     <!--JS-->
     <script src="js/script.js"></script>

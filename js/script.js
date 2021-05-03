@@ -11,6 +11,11 @@ const app = new Vue ({
     data: {
         email: 0,
     },
+    computer: {
+        dataOk() {
+            return this.email !== 0 ? true : false;
+        },
+    },
     created() {
 
         // AJAX REQUEST EMAILS  
@@ -18,8 +23,11 @@ const app = new Vue ({
         .then( element => {
             // success
             console.log(element.data.response);
+            //HTML with this. because I have arrow function
+            this.email = element.data.response;
         })
         .catch(error => {
+            //error
             console.log('Attento: ', error);
         });
     }
